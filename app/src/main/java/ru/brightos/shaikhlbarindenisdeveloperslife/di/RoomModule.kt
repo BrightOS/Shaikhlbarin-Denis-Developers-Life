@@ -15,11 +15,11 @@ import javax.inject.Singleton
 class RoomModule {
     @Provides
     @Singleton
-    fun provideGifsDao(database: LikedPostsDatabase) = database.postDao()
+    fun providePostDao(database: LikedPostsDatabase) = database.postDao()
 
     @Provides
     @Singleton
-    fun provideFavouritesDatabase(@ApplicationContext context : Context) : LikedPostsDatabase =
+    fun provideLikedPostsDatabase(@ApplicationContext context : Context) : LikedPostsDatabase =
         Room.databaseBuilder(context, LikedPostsDatabase::class.java, "liked_posts")
             .fallbackToDestructiveMigration()
             .build()

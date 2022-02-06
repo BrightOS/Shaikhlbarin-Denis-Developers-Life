@@ -100,5 +100,4 @@ class PostsFeedFragmentViewModel @Inject constructor(
             }
         }
     }
-
 }

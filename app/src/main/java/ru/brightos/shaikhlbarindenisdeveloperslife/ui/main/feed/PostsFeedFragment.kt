@@ -9,9 +9,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_post_feed.*
 import kotlinx.android.synthetic.main.fragment_post_feed.random_error
 import kotlinx.android.synthetic.main.fragment_random.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import ru.brightos.shaikhlbarindenisdeveloperslife.R
 import ru.brightos.shaikhlbarindenisdeveloperslife.epoxy.PostsEpoxyController
 import ru.brightos.shaikhlbarindenisdeveloperslife.util.EndlessRecyclerViewScrollListener
@@ -40,11 +38,7 @@ class PostsFeedFragment : Fragment(R.layout.fragment_post_feed) {
         currentPage = 0
 
         posts_refresh?.setOnRefreshListener {
-            GlobalScope.launch {
-                postsFeedFragmentViewModel.postsList.value?.clear()
-                currentPage = 0
-                postController.hasMoreToLoad = true
-            }
+            posts_refresh?.isRefreshing = false
         }
 
         postsFeedFragmentViewModel.apply {
@@ -106,5 +100,4 @@ class PostsFeedFragment : Fragment(R.layout.fragment_post_feed) {
             return fragment
         }
     }
-
 }

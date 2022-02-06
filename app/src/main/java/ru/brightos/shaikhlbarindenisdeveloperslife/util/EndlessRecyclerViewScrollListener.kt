@@ -75,5 +75,4 @@ abstract class EndlessRecyclerViewScrollListener(private val layoutManager: Recy
     }
 
     abstract fun onLoadMore(page: Int)
-
 }

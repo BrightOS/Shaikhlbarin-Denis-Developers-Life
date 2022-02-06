@@ -18,16 +18,16 @@ class LikedPostsRepositoryImpl @Inject constructor(private val dao: PostDao) :
         postEntities.forEach {
             likedPostsList.add(
                 PostModel(
-                    it.id,
-                    it.description,
-                    it.votes,
-                    it.author,
-                    it.date,
-                    it.gifURL,
-                    it.gifSize,
-                    it.previewURL,
-                    it.type,
-                    it.liked
+                    id = it.id,
+                    description = it.description,
+                    votes = it.votes,
+                    author = it.author,
+                    date = it.date,
+                    gifURL = it.gifURL,
+                    gifSize = it.gifSize,
+                    previewURL = it.previewURL,
+                    type = it.type,
+                    liked = it.liked
                 )
             )
         }
@@ -39,17 +39,17 @@ class LikedPostsRepositoryImpl @Inject constructor(private val dao: PostDao) :
         item.let {
             dao.insertLikedPost(
                 PostEntity(
-                    it.id,
-                    it.description,
-                    it.votes,
-                    it.author,
-                    it.date,
-                    it.gifURL,
-                    it.gifSize,
-                    it.previewURL,
-                    it.type,
-                    it.liked,
-                    Calendar.getInstance().timeInMillis
+                    id = it.id,
+                    description = it.description,
+                    votes = it.votes,
+                    author = it.author,
+                    date = it.date,
+                    gifURL = it.gifURL,
+                    gifSize = it.gifSize,
+                    previewURL = it.previewURL,
+                    type = it.type,
+                    liked = it.liked,
+                    time = Calendar.getInstance().timeInMillis
                 )
             )
         }
@@ -59,16 +59,16 @@ class LikedPostsRepositoryImpl @Inject constructor(private val dao: PostDao) :
             if (it.size > 0)
                 it[0].let {
                     PostModel(
-                        it.id,
-                        it.description,
-                        it.votes,
-                        it.author,
-                        it.date,
-                        it.gifURL,
-                        it.gifSize,
-                        it.previewURL,
-                        it.type,
-                        it.liked
+                        id = it.id,
+                        description = it.description,
+                        votes = it.votes,
+                        author = it.author,
+                        date = it.date,
+                        gifURL = it.gifURL,
+                        gifSize = it.gifSize,
+                        previewURL = it.previewURL,
+                        type = it.type,
+                        liked = it.liked
                     )
                 }
             else

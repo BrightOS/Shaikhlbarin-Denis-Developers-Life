@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "liked_posts")
 data class PostEntity(
-
     @PrimaryKey(autoGenerate = false)
     var id: Long,
     var description: String,
@@ -19,5 +18,4 @@ data class PostEntity(
     var type: String,
     var liked: Boolean,
     var time: Long
-
 )

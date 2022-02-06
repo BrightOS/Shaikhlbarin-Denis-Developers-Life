@@ -57,16 +57,16 @@ class RandomFragmentViewModel @Inject constructor(
                 postsList.last().let {
                     postsList.add(
                         PostModel(
-                            it.id,
-                            it.description,
-                            it.votes,
-                            it.author,
-                            it.date,
-                            it.gifURL,
-                            it.gifSize,
-                            it.previewURL,
-                            it.type,
-                            isPostLiked
+                            id = it.id,
+                            description = it.description,
+                            votes = it.votes,
+                            author = it.author,
+                            date = it.date,
+                            gifURL = it.gifURL,
+                            gifSize = it.gifSize,
+                            previewURL = it.previewURL,
+                            type = it.type,
+                            liked = isPostLiked
                         )
                     )
                     _isCurrentPostLiked.value = isPostLiked
@@ -85,16 +85,16 @@ class RandomFragmentViewModel @Inject constructor(
                 postsList.last().let {
                     postsList.add(
                         PostModel(
-                            it.id,
-                            it.description,
-                            it.votes,
-                            it.author,
-                            it.date,
-                            it.gifURL,
-                            it.gifSize,
-                            it.previewURL,
-                            it.type,
-                            isPostLiked
+                            id = it.id,
+                            description = it.description,
+                            votes = it.votes,
+                            author = it.author,
+                            date = it.date,
+                            gifURL = it.gifURL,
+                            gifSize = it.gifSize,
+                            previewURL = it.previewURL,
+                            type = it.type,
+                            liked = isPostLiked
                         )
                     )
                     _isCurrentPostLiked.value = isPostLiked
@@ -124,16 +124,16 @@ class RandomFragmentViewModel @Inject constructor(
                 } while (response.getString("type").contains("coub"))
 
                 PostModel(
-                    response.getLong("id"),
-                    response.getString("description"),
-                    response.getLong("votes"),
-                    response.getString("author"),
-                    response.getString("date"),
-                    response.getString("gifURL"),
-                    response.getLong("gifSize"),
-                    response.getString("previewURL"),
-                    response.getString("type"),
-                    postsRepository.getLikedPostByID(response.getLong("id")) != null
+                    id = response.getLong("id"),
+                    description = response.getString("description"),
+                    votes = response.getLong("votes"),
+                    author = response.getString("author"),
+                    date = response.getString("date"),
+                    gifURL = response.getString("gifURL"),
+                    gifSize = response.getLong("gifSize"),
+                    previewURL = response.getString("previewURL"),
+                    type = response.getString("type"),
+                    liked = postsRepository.getLikedPostByID(response.getLong("id")) != null
                 ).let {
                     MainScope().launch {
                         postsList.add(it)
