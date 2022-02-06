@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="cardBackground" format="color" />
+    <attr name="colorTabChecked" format="color" />
+    <attr name="colorTabNotChecked" format="color" />
+
+    <declare-styleable name="ShaiDAppBar">
+        <attr name="startIcon" format="reference"/>
+        <attr name="startIconAutoTint" format="boolean"/>
+        <attr name="endIcon" format="reference"/>
+        <attr name="endIconAutoTint" format="boolean"/>
+        <attr name="titleText" format="string" />
+        <attr name="subtitleText" format="string" />
+    </declare-styleable>
+</resources>
